@@ -1,2 +1,2 @@
 # godot-ui-components
-Components for gamedev mady with Godot
+UI components for gamedev mady with Godot
