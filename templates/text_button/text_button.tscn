@@ -13,14 +13,14 @@ modulate = Color(1, 1, 1, 1)
 self_modulate = Color(1, 1, 1, 1)
 show_behind_parent = false
 top_level = false
-clip_children = false
+clip_children = 0
 light_mask = 1
 texture_filter = 0
 texture_repeat = 0
 material = null
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2i(0, 0)
+custom_minimum_size = Vector2(0, 0)
 layout_direction = 0
 layout_mode = 3
 anchors_preset = -1
@@ -53,7 +53,7 @@ mouse_filter = 0
 mouse_force_pass_scroll_events = true
 mouse_default_cursor_shape = 0
 theme = null
-theme_type_variation = &""
+theme_type_variation = ""
 disabled = false
 toggle_mode = false
 shortcut_in_tooltip = true
@@ -71,7 +71,6 @@ hover_alpha = 1.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(0.501961, 0.501961, 0.501961, 1)
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -81,7 +80,6 @@ mouse_filter = 1
 color = Color(0.356863, 0.47451, 0.501961, 1)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
