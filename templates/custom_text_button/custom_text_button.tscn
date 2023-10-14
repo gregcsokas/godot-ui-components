@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnkjdnhlp11k1"]
+[gd_scene load_steps=2 format=3 uid="uid://cpm5in3gf1gkf"]
 
-[ext_resource type="Script" path="res://templates/texture_button/texture_button.gd" id="1_78ejq"]
+[ext_resource type="Script" path="res://templates/custom_text_button/scripts/custom_text_button.gd" id="1_7d72n"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hqk5n"]
-
-[node name="texture_button" type="BaseButton"]
+[node name="CustomTextButton" type="BaseButton"]
 _import_path = NodePath("")
 unique_name_in_owner = false
 process_mode = 0
@@ -28,18 +26,18 @@ texture_repeat = 0
 material = null
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(0, 0)
+custom_minimum_size = Vector2(150, 42)
 layout_direction = 0
 layout_mode = 3
 anchors_preset = -1
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.13
-anchor_bottom = 0.54
+anchor_bottom = 0.065
 offset_left = 0.0
 offset_top = 0.0
-offset_right = 0.23999
-offset_bottom = 0.0799866
+offset_right = -109.76
+offset_bottom = -2.12
 grow_horizontal = 1
 grow_vertical = 1
 rotation = 0.0
@@ -73,55 +71,34 @@ button_group = null
 shortcut = null
 shortcut_feedback = true
 shortcut_in_tooltip = true
-script = ExtResource("1_78ejq")
-base_color = Color(0.501961, 0.501961, 0.501961, 1)
-hover_color = Color(0.501961, 0.501961, 0.501961, 1)
-hover_alpha = 0.75
+script = ExtResource("1_7d72n")
+text_color = Color(0.901961, 0.203922, 0.2, 1)
+text_hover_color = Color(0.984314, 0.490196, 0.447059, 1)
+text_pressed_color = Color(1, 0.713726, 0.278431, 1)
+base_color = Color(0.156863, 0.219608, 0, 1)
+hover_color = Color(0.219608, 0.305882, 0, 1)
 
-[node name="texture_rect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_hqk5n")
-
-[node name="control" type="Control" parent="."]
-clip_children = 2
-layout_mode = 1
-anchor_top = 0.88
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -3.05176e-05
-grow_horizontal = 2
-grow_vertical = 0
 mouse_filter = 2
 
-[node name="color_rect" type="ColorRect" parent="control"]
-light_mask = 7
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 4
-mouse_filter = 2
-color = Color(0.231373, 0.227451, 1, 1)
-
-[node name="label" type="Label" parent="control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Text"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered" flags=3]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered" flags=3]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

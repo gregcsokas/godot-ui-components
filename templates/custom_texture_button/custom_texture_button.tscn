@@ -1,10 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnkjdnhlp11k1"]
+[gd_scene load_steps=6 format=3 uid="uid://csl2pwytsh1ew"]
 
-[ext_resource type="Script" path="res://templates/texture_button/texture_button.gd" id="1_78ejq"]
+[ext_resource type="Script" path="res://templates/custom_texture_button/scripts/custom_texture_button.gd" id="1_7c64e"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hqk5n"]
+[sub_resource type="Curve" id="Curve_gbas8"]
+_data = [Vector2(0.483221, 0.659341), 0.0, 0.0, 0, 0]
+point_count = 1
 
-[node name="texture_button" type="BaseButton"]
+[sub_resource type="Curve" id="Curve_noos0"]
+_data = [Vector2(0.191275, 0.428571), 0.0, 0.0, 0, 0, Vector2(0.791946, 0.27973), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mt7t5"]
+_data = [Vector2(0.187919, 0.56044), 0.0, 0.0, 0, 0, Vector2(0.798658, 0.253378), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_crtau"]
+width = 150
+curve_x = SubResource("Curve_gbas8")
+curve_y = SubResource("Curve_noos0")
+curve_z = SubResource("Curve_mt7t5")
+
+[node name="CustomTextureButton" type="BaseButton"]
 _import_path = NodePath("")
 unique_name_in_owner = false
 process_mode = 0
@@ -28,7 +44,7 @@ texture_repeat = 0
 material = null
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(0, 0)
+custom_minimum_size = Vector2(150, 350)
 layout_direction = 0
 layout_mode = 3
 anchors_preset = -1
@@ -38,8 +54,8 @@ anchor_right = 0.13
 anchor_bottom = 0.54
 offset_left = 0.0
 offset_top = 0.0
-offset_right = 0.23999
-offset_bottom = 0.0799866
+offset_right = -109.76
+offset_bottom = -309.92
 grow_horizontal = 1
 grow_vertical = 1
 rotation = 0.0
@@ -73,51 +89,52 @@ button_group = null
 shortcut = null
 shortcut_feedback = true
 shortcut_in_tooltip = true
-script = ExtResource("1_78ejq")
+script = ExtResource("1_7c64e")
+text_color = Color(0.752941, 0, 0, 1)
+text_hover_color = Color(1, 0, 0, 1)
+text_pressed_color = Color(1, 0.72549, 0, 1)
 base_color = Color(0.501961, 0.501961, 0.501961, 1)
-hover_color = Color(0.501961, 0.501961, 0.501961, 1)
-hover_alpha = 0.75
+hover_color = Color(0.25098, 0.25098, 0.25098, 1)
 
-[node name="texture_rect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_hqk5n")
+mouse_filter = 2
+texture = SubResource("CurveXYZTexture_crtau")
 
-[node name="control" type="Control" parent="."]
-clip_children = 2
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(150, 41)
 layout_mode = 1
-anchor_top = 0.88
+anchor_top = 0.883
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -3.05176e-05
+offset_top = 40.95
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="color_rect" type="ColorRect" parent="control"]
-light_mask = 7
+[node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 4
 mouse_filter = 2
-color = Color(0.231373, 0.227451, 1, 1)
+color = Color(0.498039, 0.498039, 0.498039, 1)
 
-[node name="label" type="Label" parent="control"]
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Text"
+text = "Button Text"
 horizontal_alignment = 1
 vertical_alignment = 1
 

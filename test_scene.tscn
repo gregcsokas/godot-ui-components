@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://cca2v30nudd50"]
+
+[ext_resource type="PackedScene" uid="uid://cpm5in3gf1gkf" path="res://templates/custom_text_button/custom_text_button.tscn" id="1_7p1uk"]
+[ext_resource type="PackedScene" uid="uid://csl2pwytsh1ew" path="res://templates/custom_texture_button/custom_texture_button.tscn" id="2_qr7bl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="CustomTextButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_7p1uk")]
+layout_mode = 2
+button_text = "Button 1"
+
+[node name="CustomTextButton2" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_7p1uk")]
+layout_mode = 2
+button_text = "Button 2"
+
+[node name="CustomTextButton3" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_7p1uk")]
+layout_mode = 2
+button_text = "Button 3"
+
+[node name="CustomTextButton4" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_7p1uk")]
+layout_mode = 2
+button_text = "Button 4"
+
+[node name="CustomTextButton5" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_7p1uk")]
+layout_mode = 2
+button_text = "Button 5"
+
+[node name="CustomTextButton6" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_7p1uk")]
+layout_mode = 2
+button_text = "Button 6"
+
+[node name="CustomTextButton7" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_7p1uk")]
+layout_mode = 2
+button_text = "Button 7"
+
+[node name="CustomTextButton8" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_7p1uk")]
+layout_mode = 2
+button_text = "Button 8"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="CustomTextureButton" parent="HBoxContainer/HBoxContainer" instance=ExtResource("2_qr7bl")]
+layout_mode = 2
+
+[node name="CustomTextureButton2" parent="HBoxContainer/HBoxContainer" instance=ExtResource("2_qr7bl")]
+layout_mode = 2
+
+[node name="CustomTextureButton3" parent="HBoxContainer/HBoxContainer" instance=ExtResource("2_qr7bl")]
+layout_mode = 2
